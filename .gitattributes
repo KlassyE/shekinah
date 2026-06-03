@@ -1,0 +1,17 @@
+# Normalize all text files to LF in the repo and on checkout.
+# Prevents phantom "uncommitted changes" on the cPanel server (CRLF drift).
+* text=auto eol=lf
+
+# Treat binary assets as binary (never touch their bytes).
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.gif  binary
+*.ico  binary
+*.heic binary
+*.HEIC binary
+*.woff  binary
+*.woff2 binary
+*.ttf  binary
+*.eot  binary
