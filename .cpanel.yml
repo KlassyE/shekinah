@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    # Change USERNAME to your cPanel account username.
+    # If you deploy into a subfolder/addon domain, adjust the path accordingly,
+    # e.g. /home/USERNAME/public_html/subdomain/
+    - export DEPLOYPATH=/home/calidadadmin/public_html/
+    - /bin/mkdir -p $DEPLOYPATH
+    # Copy the pre-built site (the contents of dist/) into public_html.
+    - /bin/cp -R dist/. $DEPLOYPATH
