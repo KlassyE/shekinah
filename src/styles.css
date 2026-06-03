@@ -721,7 +721,7 @@ p { margin: 0 0 0.85rem; }
 .footer-grid a:hover { color: var(--turquoise); }
 .footer-grid .btn-light { color: var(--teal-900); font-weight: 800; }
 .footer-brand { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; color: white; }
-.footer-brand img { height: 40px; }
+.footer-brand img { height: 40px; background: #fff; padding: 4px 6px; border-radius: 8px; }
 .contact-list li { font-size: 0.92rem; }
 
 .footer-bottom {
