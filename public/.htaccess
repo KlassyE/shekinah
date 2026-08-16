@@ -2,6 +2,10 @@
 # Shekinah - Apache config for cPanel (Vite SPA)
 # ----------------------------------------------------------------------
 
+# Serve the application shell at / and never expose directory listings
+Options -Indexes
+DirectoryIndex index.html
+
 # Force HTTPS
 <IfModule mod_rewrite.c>
   RewriteEngine On
