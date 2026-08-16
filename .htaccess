@@ -1,0 +1,21 @@
+# ----------------------------------------------------------------------
+# cPanel/LiteSpeed compatibility router
+# ----------------------------------------------------------------------
+# The intended domain root is this repository's dist/ directory. If the
+# hosting vhost temporarily points one level higher, route requests into the
+# committed production build without exposing repository metadata or source.
+
+DirectoryIndex dist/index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Block hidden files and development-only directories/configuration.
+  RewriteRule (^|/)\. - [F,L]
+  RewriteRule ^(?:node_modules|public|scripts|src)(?:/|$) - [F,L,NC]
+  RewriteRule ^(?:package(?:-lock)?\.json|tsconfig(?:\.[^/]+)?\.json|vercel\.json|vite\.config\.[^/]+)$ - [F,L,NC]
+
+  # Avoid a rewrite loop, then map every public request into dist/.
+  RewriteRule ^dist(?:/|$) - [L]
+  RewriteRule ^(.*)$ dist/$1 [L]
+</IfModule>
