@@ -1,8 +1,8 @@
 ---
 deployment:
   tasks:
-    # The site is served directly from this repo's dist/ folder
-    # (addon domain Document Root = /home/calidadadmin/shekinah.ac.ug/dist).
+    # The site is served directly from this repository's dist/ folder
+    # (addon domain Document Root = /home/calidadadmin/repositories/shekinah/dist).
     # cPanel checks out the latest commit automatically, so no copying is needed.
-    - export DEPLOYPATH=/home/calidadadmin/shekinah.ac.ug/dist
+    - export DEPLOYPATH=/home/calidadadmin/repositories/shekinah/dist
     - /bin/true
